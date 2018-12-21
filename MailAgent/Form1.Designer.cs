@@ -41,6 +41,11 @@
             this.columnHeaderFrom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderSubject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonIMAP = new System.Windows.Forms.Button();
+            this.labelUserName = new System.Windows.Forms.Label();
+            this.labelTo = new System.Windows.Forms.Label();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.labelSubject = new System.Windows.Forms.Label();
+            this.labelBody = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBoxAddress
@@ -48,7 +53,8 @@
             this.comboBoxAddress.FormattingEnabled = true;
             this.comboBoxAddress.Items.AddRange(new object[] {
             "@mail.ru",
-            "@gmail.com"});
+            "@gmail.com",
+            "@yandex.ru"});
             this.comboBoxAddress.Location = new System.Drawing.Point(188, 28);
             this.comboBoxAddress.Name = "comboBoxAddress";
             this.comboBoxAddress.Size = new System.Drawing.Size(121, 21);
@@ -145,15 +151,65 @@
             this.buttonIMAP.Name = "buttonIMAP";
             this.buttonIMAP.Size = new System.Drawing.Size(75, 23);
             this.buttonIMAP.TabIndex = 9;
-            this.buttonIMAP.Text = "button1";
+            this.buttonIMAP.Text = "Load";
             this.buttonIMAP.UseVisualStyleBackColor = true;
             this.buttonIMAP.Click += new System.EventHandler(this.buttonIMAP_Click);
+            // 
+            // labelUserName
+            // 
+            this.labelUserName.AutoSize = true;
+            this.labelUserName.Location = new System.Drawing.Point(14, 13);
+            this.labelUserName.Name = "labelUserName";
+            this.labelUserName.Size = new System.Drawing.Size(57, 13);
+            this.labelUserName.TabIndex = 10;
+            this.labelUserName.Text = "UserName";
+            // 
+            // labelTo
+            // 
+            this.labelTo.AutoSize = true;
+            this.labelTo.Location = new System.Drawing.Point(178, 131);
+            this.labelTo.Name = "labelTo";
+            this.labelTo.Size = new System.Drawing.Size(20, 13);
+            this.labelTo.TabIndex = 11;
+            this.labelTo.Text = "To";
+            // 
+            // labelPassword
+            // 
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Location = new System.Drawing.Point(14, 53);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(53, 13);
+            this.labelPassword.TabIndex = 12;
+            this.labelPassword.Text = "Password";
+            // 
+            // labelSubject
+            // 
+            this.labelSubject.AutoSize = true;
+            this.labelSubject.Location = new System.Drawing.Point(14, 177);
+            this.labelSubject.Name = "labelSubject";
+            this.labelSubject.Size = new System.Drawing.Size(43, 13);
+            this.labelSubject.TabIndex = 13;
+            this.labelSubject.Text = "Subject";
+            // 
+            // labelBody
+            // 
+            this.labelBody.AutoSize = true;
+            this.labelBody.Location = new System.Drawing.Point(14, 220);
+            this.labelBody.Name = "labelBody";
+            this.labelBody.Size = new System.Drawing.Size(31, 13);
+            this.labelBody.TabIndex = 14;
+            this.labelBody.Text = "Body";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 450);
+            this.Controls.Add(this.labelBody);
+            this.Controls.Add(this.labelSubject);
+            this.Controls.Add(this.labelPassword);
+            this.Controls.Add(this.labelTo);
+            this.Controls.Add(this.labelUserName);
             this.Controls.Add(this.buttonIMAP);
             this.Controls.Add(this.listViewMessages);
             this.Controls.Add(this.buttonOK);
@@ -186,6 +242,11 @@
         private System.Windows.Forms.ColumnHeader columnHeaderFrom;
         private System.Windows.Forms.ColumnHeader columnHeaderSubject;
         private System.Windows.Forms.Button buttonIMAP;
+        private System.Windows.Forms.Label labelUserName;
+        private System.Windows.Forms.Label labelTo;
+        private System.Windows.Forms.Label labelPassword;
+        private System.Windows.Forms.Label labelSubject;
+        private System.Windows.Forms.Label labelBody;
     }
 }
 
