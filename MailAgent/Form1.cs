@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rebex.Net;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,7 @@ namespace MailAgent
         public Form1()
         {
             InitializeComponent();
+            Rebex.Licensing.Key = "==AJi/Qc8IWdjRVmaNLp6w7QFcIVNYh2qPBo4zbjd1ELiY==";
         }
 
         private void buttonOK_Click(object sender, EventArgs e)
@@ -65,6 +67,27 @@ namespace MailAgent
             string Subjekt = textBoxSubject.Text;
             string Body = textBoxBody.Text;
             SendEmailAsync(client, To, Subjekt, Body).GetAwaiter();
+        }
+
+        void IMAP()
+        {
+            
+            var imap = new Rebex.Net.Imap();
+            imap.Connect(client.Smtp.Host, SslMode.Implicit);
+            imap.Login(client.mail_address, client.Password);
+            imap.SelectFolder("Inbox");
+            ImapMessageCollection list = imap.GetMessageList();
+            foreach (ImapMessageInfo info in list)
+            {
+                ListViewItem lListW = new ListViewItem(new string[] { info.ReceivedDate.ToString(), info.From.ToString(), info.Subject });
+                listViewMessages.Items.Add(lListW);
+                //Console.WriteLine("[{0}] {1}: {2}", info.ReceivedDate, info.From, info.Subject);
+            }
+        }
+
+        private void buttonIMAP_Click(object sender, EventArgs e)
+        {
+            IMAP();
         }
     }
 }

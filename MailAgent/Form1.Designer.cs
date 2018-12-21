@@ -36,6 +36,11 @@
             this.textBoxTo = new System.Windows.Forms.TextBox();
             this.buttonSend = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
+            this.listViewMessages = new System.Windows.Forms.ListView();
+            this.columnHeaderReceivedDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderFrom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderSubject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonIMAP = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBoxAddress
@@ -106,11 +111,51 @@
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
+            // listViewMessages
+            // 
+            this.listViewMessages.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderReceivedDate,
+            this.columnHeaderFrom,
+            this.columnHeaderSubject});
+            this.listViewMessages.Location = new System.Drawing.Point(331, 28);
+            this.listViewMessages.Name = "listViewMessages";
+            this.listViewMessages.Size = new System.Drawing.Size(471, 341);
+            this.listViewMessages.TabIndex = 8;
+            this.listViewMessages.UseCompatibleStateImageBehavior = false;
+            this.listViewMessages.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeaderReceivedDate
+            // 
+            this.columnHeaderReceivedDate.Text = "ReceivedDate";
+            this.columnHeaderReceivedDate.Width = 150;
+            // 
+            // columnHeaderFrom
+            // 
+            this.columnHeaderFrom.Text = "From";
+            this.columnHeaderFrom.Width = 150;
+            // 
+            // columnHeaderSubject
+            // 
+            this.columnHeaderSubject.Text = "Subject";
+            this.columnHeaderSubject.Width = 150;
+            // 
+            // buttonIMAP
+            // 
+            this.buttonIMAP.Location = new System.Drawing.Point(726, 387);
+            this.buttonIMAP.Name = "buttonIMAP";
+            this.buttonIMAP.Size = new System.Drawing.Size(75, 23);
+            this.buttonIMAP.TabIndex = 9;
+            this.buttonIMAP.Text = "button1";
+            this.buttonIMAP.UseVisualStyleBackColor = true;
+            this.buttonIMAP.Click += new System.EventHandler(this.buttonIMAP_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 450);
+            this.ClientSize = new System.Drawing.Size(814, 450);
+            this.Controls.Add(this.buttonIMAP);
+            this.Controls.Add(this.listViewMessages);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.buttonSend);
             this.Controls.Add(this.textBoxTo);
@@ -136,6 +181,11 @@
         private System.Windows.Forms.TextBox textBoxTo;
         private System.Windows.Forms.Button buttonSend;
         private System.Windows.Forms.Button buttonOK;
+        private System.Windows.Forms.ListView listViewMessages;
+        private System.Windows.Forms.ColumnHeader columnHeaderReceivedDate;
+        private System.Windows.Forms.ColumnHeader columnHeaderFrom;
+        private System.Windows.Forms.ColumnHeader columnHeaderSubject;
+        private System.Windows.Forms.Button buttonIMAP;
     }
 }
 
